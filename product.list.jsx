@@ -1,24 +1,23 @@
 import React from "react";
 
 const products = [
-  { id: 1, name: "Matcha KitKat", price: "$3.50" },
-  { id: 2, name: "Pocky Almond Crush", price: "$2.99" },
-  { id: 3, name: "Korean Honey Butter Chips", price: "$4.25" },
-  { id: 4, name: "Japanese Ramune Soda", price: "$2.50" }
+  { id: 1, name: "Japanese KitKat - Matcha", price: "$4.99" },
+  { id: 2, name: "Korean Honey Butter Chips", price: "$3.49" },
+  { id: 3, name: "Thai Coconut Roll", price: "$5.29" },
 ];
 
 export default function ProductList() {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-      {products.map((p) => (
-        <div
-          key={p.id}
-          className="bg-white shadow p-4 rounded hover:shadow-lg transition"
-        >
-          <h2 className="text-lg font-semibold">{p.name}</h2>
-          <p className="text-gray-600">{p.price}</p>
-        </div>
-      ))}
+    <div>
+      <h2 className="text-xl font-bold mb-4">Our Snacks</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {products.map((product) => (
+          <div key={product.id} className="bg-white p-4 rounded-lg shadow-md">
+            <h3 className="font-semibold">{product.name}</h3>
+            <p className="text-gray-600">{product.price}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
